@@ -1,7 +1,7 @@
 # macos-dotfiles
 This repository houses my dotfiles for my MacBook Pro M1 Max.
 
-PICTURE SOON
+![screenshot](screenshot.png)
 
 Web Browser: [qutebrowser](https://qutebrowser.org)
 
