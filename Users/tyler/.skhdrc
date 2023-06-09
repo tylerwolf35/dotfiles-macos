@@ -105,6 +105,17 @@
 #    "qutebrowser"
 # ]
 
+# yabai
+
+# focus window
+alt - h : yabai -m window --focus "$(yabai -m query --windows | jq -re "sort_by(.display, .space, .frame.x, .frame.y, .id) | map(select(.\"is-visible\" == true and .role != \"AXUnknown\")) | reverse | nth(index(map(select(.\"has-focus\" == true))) - 1).id")"
+
+# increase window size
+cmd + shift - j : yabai -m window --resize left:-20:0
+
+# decrease window size
+cmd + shift - l : yabai -m window --resize left:20:0
+
 # open terminal, blazingly fast compared to iTerm/Hyper
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 
