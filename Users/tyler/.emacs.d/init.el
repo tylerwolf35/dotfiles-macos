@@ -23,14 +23,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'kanagawa t)
 
-; evil
-; (setq evil-want-keybinding nil)
-; (require 'evil)
-; (evil-mode 1)
-; (evil-set-undo-system 'undo-fu)
-; (when (require 'evil-collection nil t)
-;  (evil-collection-init))
-
 ;; meow
 (require 'meow)
 (defun meow-setup ()
