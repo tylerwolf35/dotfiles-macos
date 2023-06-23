@@ -123,7 +123,7 @@ cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 cmd + shift - return : /Applications/qutebrowser.app/Contents/MacOS/qutebrowser
 
 # open emacs
-cmd - e : emacs
+cmd - e : emacsclient -c -n -a ''
 
 # open mail
 cmd - m : /System/Applications/Mail.app/Contents/MacOS/Mail
