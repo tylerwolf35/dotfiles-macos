@@ -7,6 +7,9 @@
 ;; close pairs
 (electric-pair-mode)
 
+;; remove tool bar
+(tool-bar-mode -1)
+
 ;; change backup directory
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
