@@ -23,4 +23,4 @@ MODEL="${INITIAL_LANGUAGE}-${TARGET_LANGUAGE}-base"
 
 OUTPUT=$(echo $QUTE_SELECTED_TEXT | /Applications/translateLocally.app/Contents/MacOS/translateLocally -m $MODEL)
 
-osascript -e "display dialog \"Translation: $OUTPUT\""
+osascript -e "display dialog \"$OUTPUT\""
