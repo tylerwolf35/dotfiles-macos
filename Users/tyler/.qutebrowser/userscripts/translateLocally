@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Local translation of selected text using translateLocally for use with qutebrowser on macOS.
+# This took much longer to make then it should have due to my inexperience with osascript as well as lapses in my bash.
+
+# todo: add auto-detection of language (already working with tika but want to get menu first)
+osascript -e '
+tell application "Finder"
+set strPath to POSIX file "/Users/tyler/Library/Containers/com.translateLocally.translateLocally/Data/.config/translateLocally/"
+set inputPath to (choose folder with prompt "Please select the model you would like to use for the translation." default location strPath)
+end tell
+' > /tmp/outputMode
+
+OUTPUT_MODE=$(cat /tmp/outputMode)
+echo $OUTPUT_MODE
+rm /tmp/outputMode
+
+INITIAL_LANGUAGE=${OUTPUT_MODE:118:2}
+TARGET_LANGUAGE=${OUTPUT_MODE:120:2}
+
+# todo: simplify model selection for command (may require my own models so a potential fork with my own)
+MODEL="${INITIAL_LANGUAGE}-${TARGET_LANGUAGE}-base"
+
+OUTPUT=$(echo $QUTE_SELECTED_TEXT | /Applications/translateLocally.app/Contents/MacOS/translateLocally -m $MODEL)
+
+osascript -e "display dialog \"Translation: $OUTPUT\""
