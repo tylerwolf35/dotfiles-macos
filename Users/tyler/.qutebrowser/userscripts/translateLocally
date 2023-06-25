@@ -19,8 +19,16 @@ INITIAL_LANGUAGE=${OUTPUT_MODE:118:2}
 TARGET_LANGUAGE=${OUTPUT_MODE:120:2}
 
 # todo: simplify model selection for command (may require my own models so a potential fork with my own)
-MODEL="${INITIAL_LANGUAGE}-${TARGET_LANGUAGE}-base"
-
+# so far this only works with "base" or "tiny" models, this will change soon to work with any model regardless of naming structure
+if [[ $OUTPUT_MODE =~ "base" ]]; then
+    MODEL="${INITIAL_LANGUAGE}-${TARGET_LANGUAGE}-base"
+elif [[ $OUTPUT_MODE =~ "tiny" ]]; then
+    MODEL="${INITIAL_LANGUAGE}-${TARGET_LANGUAGE}-tiny"
+else
+    osascript -e "display dialog \"Invalid language model selected.\""
+    exit 1
+fi
+    
 OUTPUT=$(echo $QUTE_SELECTED_TEXT | /Applications/translateLocally.app/Contents/MacOS/translateLocally -m $MODEL)
 
 osascript -e "display dialog \"$OUTPUT\""
