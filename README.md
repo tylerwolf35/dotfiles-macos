@@ -7,7 +7,7 @@ Web Browser: [qutebrowser](https://qutebrowser.org)
 
 Terminal: [kitty](https://sw.kovidgoyal.net/kitty)
 
-Text Editor: [emacs](https://www.gnu.org/software/emacs/) [(emacs-plus)](https://github.com/d12frosted/homebrew-emacs-plus)
+Text Editor: [emacs](https://www.gnu.org/software/emacs/) via [(emacs-plus)](https://github.com/d12frosted/homebrew-emacs-plus)
 
 Window Manager: [yabai](https://github.com/koekeishiya/yabai)
 
