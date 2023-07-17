@@ -140,7 +140,7 @@
   (ement-connect :uri-prefix "http://localhost:8009"
 		 :user-id "@tylerwolf:matrix.org"))
 
-;; shell
+;; initialize path from shell
 (when (daemonp)
   (exec-path-from-shell-initialize))
 
